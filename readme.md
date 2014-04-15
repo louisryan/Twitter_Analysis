@@ -17,7 +17,9 @@ Setup and Installation
 
 4. Add your OAuth credentials to the oauth table. You obtain OAuth credentials by setting up and Application at Twitter's Developer site(https://dev.twitter.com/).
 
+```
 INSERT INTO \`oauth\` (\`oauth_id\`, \`name\`, \`consumer_key\`, \`consumer_secret\`, \`access_token\`, \`access_token_secret\`) VALUES (1, 'a name you can remember', 'consumer_key', 'consumer_secret', 'access_token', 'access_token_secret');
+```
 
 5. To start monitoring mentions or hashtags, insert job row into job table:
 	* job_id: an INT you can choose
@@ -30,8 +32,10 @@ INSERT INTO \`oauth\` (\`oauth_id\`, \`name\`, \`consumer_key\`, \`consumer_secr
 	* analysis_state: 0 for new jobs
 	* oauth_id: set to match the ID of the oauth credentials you just added 
 
+```
 INSERT INTO \`job\` (\`job_id\`, \`state\`, \`zombie_head\`, \`since_id_str\`, \`query\`, \`description\`, \`last_count\`, \`last_run\`, \`analysis_state\`, \`oauth_id\`) VALUES (3, 1, 2, X'30', 
 'q=from%3Alibbyh%20OR%20from%3Asgoggins', 'Libby\'s example job', NULL, NULL, 0, 1);
+```
 
 6. In Twitter_Scrape.py, set database config options in method connect(). 
 
@@ -42,11 +46,12 @@ usage: TwitterGoggles.py [-h] [-v]  head
 
 positional arguments:
   head                  Specify the head associated in job table
-
+```
 
  Running Periodically
  --------------------
  Twitter implements a rate limit - A maximum of 15 calls from a user and 30 API calls from an application are allowed within a 15 minutes limit window. Using unix cron jobs, we can schedule Twitter_Scrape.py to execute at 1-60 minute interval
 
-
+```
 */1 * * * * /usr/local/bin/python2.7 /louisryan/Twitter/Twitter_Scrape.py 1  >> ~/log/zombielog-head-1-1.txt
+```
