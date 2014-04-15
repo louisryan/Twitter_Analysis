@@ -1,0 +1,7 @@
+1. Review SQL code to create Database schema
+
+2. Review Python script to query API
+
+3. Look into which additional files are relevent to upload. Choosing which files to exclude is just as important as which ones to include.
+
+4. Spin out web scraping python project into seperate one. 

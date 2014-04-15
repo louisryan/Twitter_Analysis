@@ -1,0 +1,9 @@
+Twitter API:
+
+Initiated and implemented a project to collect, store and analyze Twitter data relating to Paddy Power and its competitors. 
+
+This project was inspired by recoginizing the deficiency in service provided by an external provider and prototyping an application which accessed Twitters REST API periodically, parsing the JSON response and storing the tweets in a MySQL database for ad-hoc analysis. This project was
+
+Further analysis was performed to determine Sentiment of tweets. Using this as a metric allowed business questions such as "Which influential followers are speaking positively/negatively about our brand". 
+
+Link to Github
