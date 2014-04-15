@@ -50,7 +50,7 @@ positional arguments:
 
 Test the application to ensure it runs before following the next step.
 
-Period Execution
+Periodic Execution
 ------
 
  Twitter implements a rate limit - A maximum of 15 calls from a user and 30 API calls from an application are allowed within a 15 minutes limit window. Using unix cron jobs, we can schedule Twitter_Scrape.py to execute at 1-60 minute interval
