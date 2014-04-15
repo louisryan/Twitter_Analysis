@@ -48,6 +48,8 @@ positional arguments:
   head                  Specify the head associated in job table
 ```
 
+Test the application to ensure it runs before following the next step.
+
  Running Periodically
  ---------------------
 
