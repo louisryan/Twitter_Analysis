@@ -1,13 +1,3 @@
-/*
- Target DB Type    : MySQL
- Target DB Version : 50525
- File Encoding     : utf-8
-*/
-
-
-
-SET NAMES utf8;
-SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 --  Table structure for `hashtag`
@@ -188,10 +178,3 @@ CREATE TABLE `user_timeline` (
   `iso_language` varchar(3) NOT NULL,
   PRIMARY KEY (`tweet_id_str`,`job_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
-
-
-
-
-
-SET FOREIGN_KEY_CHECKS = 1;

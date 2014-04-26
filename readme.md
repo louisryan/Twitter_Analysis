@@ -23,10 +23,10 @@ INSERT INTO oauth (oauth_id, name, consumer_key, consumer_secret, access_token, 
 
 5. To start monitoring mentions or hashtags, insert job row into job table:
 	* job_id: an INT you can choose
-	* zhead: an INT, you'll use this to identify the head
+	* head: an INT, you'll use this to identify the head
 	* since_id_str: can be blank for new jobs
 	* query: the "q=params" part of a Twitter Search Query (see https://dev.twitter.com/docs/using-search)
-	* description: a note to yourself about what this job does, will print in verbose mode 
+	* description: a note to yourself about what this job does. i.e. "Scraping mentions of Boyle Sports"
 	* last_count: NULL for new jobs
 	* last_run: NULL for new jobs
 	* analysis_state: 0 for new jobs
@@ -42,16 +42,16 @@ INSERT INTO job (job_id, state, zombie_head, since_id_str, query, description, l
 Usage
 ------
 ```
-usage: Twitter_Scrape.py [-h] [-v]  head
+usage: Twitter_Scrape.py [-head]
 
 positional arguments:
-  head                  Specify the head associated in job table
+  head - Specify the head associated in job table
 ```
 
 Scheduling Execution
 ------
 
-Twitter's API returns a window of results when the program executes. To continually have the most recent content, the python script must be scheduled. Unix crons jobs can be created to execute the Twitter_Scrape script at 15 minute intervals. There are checks in place to ensure there are no duplicates entered into the database.
+Twitter's API returns a window of results when the program executes. To continually have the most recent content, the python script must be scheduled. Unix crons jobs can be created to execute the Twitter_Scrape script at 15 minute intervals. There are checks in place to ensure there are no duplicates result sets returned from Twitters API. 
 
 ```
 */15 * * * * /usr/local/bin/python2.7 /louisryan/Twitter/Twitter_Scrape.py 1 
