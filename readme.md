@@ -1,6 +1,6 @@
 Twitter-Scraper
 ==============
-A python script to scrape mentions and tweets from Twitter to store in a MySQL database. 
+A python script to scrape mentions and tweets from Twitter to store in a MySQL database. This script is set up to run on an Amazon EC2 instance, fetching the most recent tweets on a 15 minute interval(adjustable) and storing them in a relational database.
 
 
 Setup and Installation
@@ -48,13 +48,11 @@ positional arguments:
   head                  Specify the head associated in job table
 ```
 
-Test the application to ensure it runs before following the next step.
-
-Periodic Execution
+Scheduling Execution
 ------
 
- Twitter implements a rate limit - A maximum of 15 calls from a user and 30 API calls from an application are allowed within a 15 minutes limit window. Using unix cron jobs, we can schedule Twitter_Scrape.py to execute at 1-60 minute interval
+Twitter's API returns a window of results when the program executes. To continually have the most recent content, the python script must be scheduled. Unix crons jobs can be created to execute the Twitter_Scrape script at 15 minute intervals. There are checks in place to ensure there are no duplicates entered into the database.
 
 ```
-*/1 * * * * /usr/local/bin/python2.7 /louisryan/Twitter/Twitter_Scrape.py 1  >> ~/log/zombielog-head-1-1.txt
+*/15 * * * * /usr/local/bin/python2.7 /louisryan/Twitter/Twitter_Scrape.py 1 
 ```
