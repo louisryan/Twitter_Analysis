@@ -33,8 +33,8 @@ INSERT INTO oauth (oauth_id, name, consumer_key, consumer_secret, access_token, 
 	* oauth_id: set to match the ID of the oauth credentials you just added 
 
 ```
-INSERT INTO job (job_id, state, zombie_head, since_id_str, query, description, last_count, last_run, analysis_state, oauth_id) VALUES (3, 1, 2, X'30', 
-'apple', 'Apple Mentions', NULL, NULL, 0, 1);
+INSERT INTO job (job_id, head, since_id_str, query, description, last_count, last_run, oauth_id) VALUES (1, 1, X'30', 
+'apple', 'Apple Mentions', NULL, NULL, 1);
 ```
 
 6. In Twitter_Scrape.py, set database config options in method connect(). 
