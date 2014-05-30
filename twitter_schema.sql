@@ -70,6 +70,7 @@ CREATE TABLE `tweet` (
   `created_at` datetime NOT NULL,
   `text` varchar(255) NOT NULL,
   `retweet` bit NOT NULL,
+  `word_count` INT NOT NULL,
   `from_user` varchar(45) NOT NULL,
   `from_user_id_str` varchar(20) NOT NULL,
   `from_user_name` varchar(45) NOT NULL,

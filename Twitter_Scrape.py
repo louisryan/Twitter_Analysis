@@ -24,7 +24,7 @@ def connect() :
 		'password' : "",
 		'host' : "localhost",
 		'port' : 3306,
-		'database' : "Twitter",
+		'database' : "TwitterV1",
 		'charset' : 'utf8',
 		'collation' : 'utf8_general_ci',
 		'buffered' : True
